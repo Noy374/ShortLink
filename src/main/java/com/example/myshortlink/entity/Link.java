@@ -10,12 +10,13 @@ import java.util.List;
 public class Link {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     @Column(unique = true,nullable = false)
-    String  link;
+    private String  link;
     @Column(unique = true,nullable = false)
-    String shortLink;
-    @ManyToMany(mappedBy = "links")
-    List<User> usersList=new ArrayList<>() ;
+    private String shortLink;
+    @ManyToOne
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
 
 }

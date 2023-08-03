@@ -1,12 +1,12 @@
 package com.example.myshortlink.validations;
 
-import com.example.myshortlink.annotations.PasswordTest;
+import com.example.myshortlink.annotations.PasswordAndUsernameTest;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class PasswordValidator implements ConstraintValidator<PasswordTest,Object> {
+public class PasswordValidator implements ConstraintValidator<PasswordAndUsernameTest,Object> {
     @Override
-    public void initialize(PasswordTest constraintAnnotation) {
+    public void initialize(PasswordAndUsernameTest constraintAnnotation) {
 
     }
     @Override
