@@ -23,4 +23,5 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Transactional
     void updateToken(@Param("username") String username, @Param("token") Token token);
 
+    User getUserByToken(Token token);
 }

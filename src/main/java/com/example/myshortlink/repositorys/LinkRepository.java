@@ -11,4 +11,7 @@ import java.util.List;
 @Repository
 public interface LinkRepository extends JpaRepository<Link,Long> {
 
+    Link getLinkByShortLink(String shortLink);
+
+
 }

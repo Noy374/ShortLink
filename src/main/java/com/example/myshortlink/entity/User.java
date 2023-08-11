@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,12 +14,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Сan'not be empty")
+    @NotBlank(message = "Сan't be empty")
     @Column(unique = true,nullable = false)
     @Size(min=6,max=200,message ="Must be between 6 and 200 characters" )
     @PasswordAndUsernameTest
     private String username;
-    @NotBlank(message = "Сan'not be empty")
+    @NotBlank(message = "Сan't be empty")
     @Size(min=6,max=200,message = "must be between 6 and 200 characters")
     @Column(nullable = false,length = 200)
     @PasswordAndUsernameTest
