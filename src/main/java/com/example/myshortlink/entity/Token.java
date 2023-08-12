@@ -27,4 +27,9 @@ public class Token {
     {
         this.createdDate = LocalDateTime.now();
     }
+
+    @Override
+    public String toString(){
+        return "[accessToken="+accessToken+",refreshToken="+refreshToken+"]";
+    }
 }

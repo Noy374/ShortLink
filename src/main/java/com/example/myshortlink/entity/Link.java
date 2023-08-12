@@ -19,4 +19,8 @@ public class Link {
     @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User user;
 
+    @Override
+    public String toString(){
+        return "[link="+link+",shortLink="+shortLink+"]";
+    }
 }

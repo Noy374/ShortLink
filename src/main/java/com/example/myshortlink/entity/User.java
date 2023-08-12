@@ -29,4 +29,9 @@ public class User {
     @OneToOne(optional = true)
     @JoinColumn(name = "token_id",referencedColumnName = "id")
     private Token token ;
+
+    @Override
+    public String toString(){
+        return "[username="+username+",password="+password+"]";
+    }
 }

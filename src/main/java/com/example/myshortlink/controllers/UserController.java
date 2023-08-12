@@ -34,7 +34,7 @@ public class UserController {
 
         Token token1 = tokenService.getTokenByAccessToken(token.getAccessToken());
         if (token1 != null) {
-            return ResponseEntity.ok(userService.getLinksByToken(token1));
+            return ResponseEntity.ok(userService.getLinksByToken(token1).toString());
         } else {
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
@@ -49,6 +49,8 @@ public class UserController {
                 }else return ResponseEntity.badRequest().body(HttpStatus.UNAUTHORIZED);
             }else return ResponseEntity.badRequest().body(HttpStatus.UNAUTHORIZED);
         }
+
+
 
     }
 }

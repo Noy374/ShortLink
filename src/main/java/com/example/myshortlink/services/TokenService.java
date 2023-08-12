@@ -35,11 +35,12 @@ public class TokenService {
         tokenRepository.updateAccessToken(accessToken,LocalDateTime.now(),refreshToken);
     }
     public Token getTokenByAccessToken(String token){
-        System.out.println(LocalDateTime.now().until(tokenRepository.findByAccessToken(token).getCreatedDate(), ChronoUnit.HOURS));
-        if( LocalDateTime.now().until(tokenRepository.findByAccessToken(token).getCreatedDate(), ChronoUnit.HOURS)<7){
+//        System.out.println(LocalDateTime.now().until(tokenRepository.findByAccessToken(token).getCreatedDate(), ChronoUnit.HOURS));
+        if( Math.abs(LocalDateTime.now().until(tokenRepository.findByAccessToken(token).getCreatedDate(), ChronoUnit.HOURS))<7){
             return tokenRepository.findByAccessToken(token);
         }
         return  null;
+
     }
     public Token getTokenByRefreshToken(String token){
         return tokenRepository.findByRefreshToken(token);
